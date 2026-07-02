@@ -1,24 +1,24 @@
-# Rafi Al — Portfolio
+# Rafi Al Arifi — Portfolio
 
-A personal portfolio site built with Next.js 14 (App Router), TypeScript, Tailwind CSS,
-and Framer Motion. Bilingual (Indonesian/English), light/dark theme, and a fully typed
-data layer for projects, skills, and experience.
+A personal portfolio site built with Next.js 16 (App Router), TypeScript, and Tailwind
+CSS v4. Bilingual (Indonesian/English), light/dark theme, and a fully typed data layer
+for projects, skills, and experience.
 
 ## Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Next.js 16 (App Router, Turbopack)
 - **Language**: TypeScript (strict mode)
-- **Styling**: Tailwind CSS + CSS custom properties for the design system
+- **Styling**: Tailwind CSS v4 (CSS-first config) + CSS custom properties for the design system
 - **Animation**: Framer Motion
 - **Icons**: Lucide React
 - **Fonts**: `next/font` — Bebas Neue (display) + Plus Jakarta Sans (body)
 - **Forms**: React Hook Form + Zod
-- **Theme**: next-themes (dark/light)
-- **Linting**: ESLint + Prettier (with `prettier-plugin-tailwindcss`)
+- **Theme**: next-themes (dark/light, dark by default)
+- **Linting**: ESLint (flat config) + Prettier (with `prettier-plugin-tailwindcss`)
 
 ## Getting Started
 
-Requires Node.js 18.18+ (Node 20 LTS recommended).
+Requires Node.js 20.9+ (Next.js 16's minimum).
 
 ```bash
 npm install
@@ -54,21 +54,23 @@ public/assets/          CV PDF, OG image
 
 ## Content You Should Replace
 
-A few things are placeholders and should be swapped before shipping:
+A few things are still placeholders and should be swapped before shipping:
 
 - `public/assets/cv.pdf` — replace with your real CV.
 - `public/assets/og-image.png` — replace with a real 1200×630 Open Graph image.
-- Social links in `components/sections/Contact.tsx` (`socialLinks`) — currently point to
-  `github.com/yourusername`, `linkedin.com/in/yourusername`, and a placeholder email.
-- `data/projects.ts` — GitHub/live URLs are placeholders.
+- `data/projects.ts` — GitHub/live URLs on individual project cards are placeholders.
 - `data/timeline.ts` — company/university names are placeholders; swap in your real history.
-- `app/layout.tsx` — `siteUrl` is set to a placeholder domain; update once you have one.
+
+GitHub, LinkedIn, and contact email in `components/sections/Contact.tsx` (`socialLinks`)
+are already filled in.
 
 ## Design System
 
-Colors are defined as CSS custom properties in `app/globals.css` and mapped into Tailwind
-via `tailwind.config.ts` (e.g. `bg-bg-primary`, `text-accent-gold`). Dark is the default
-theme; `next-themes` toggles a `.light` class on `<html>` that overrides the variables.
+Colors are defined as CSS custom properties in `app/globals.css` (`:root` = dark, `.light`
+overrides) and mapped into Tailwind's theme namespace via the `@theme inline` block in the
+same file — there's no `tailwind.config.ts`; Tailwind v4 is CSS-first, and content
+scanning is automatic. Dark is the default theme; `next-themes` toggles a `.light` class
+on `<html>` to swap the variables.
 
 ## i18n
 
@@ -78,11 +80,13 @@ Add new strings to both the `id` and `en` blocks in `lib/i18n.ts`.
 
 ## Known Tradeoffs
 
-- Pinned to **Next.js 14.2.35** / React 18 / Tailwind v3 to match the requested stack.
-  `npm audit` will report several high-severity advisories that only have fixes in the
-  Next.js 15/16 line — these are inherent to staying on Next 14 and not vulnerabilities
-  introduced by this codebase. Upgrade the major version if that tradeoff isn't acceptable.
-- `next.config.ts` isn't supported until Next 15, so config lives in `next.config.mjs`.
+- `lucide-react` is pinned to `^0.499.0` instead of the current `1.x` line — Lucide
+  dropped brand/logo icons (GitHub, LinkedIn) in its 1.0 release, and this site's Contact
+  section needs them. `0.499.0` is the last release that still ships them.
+- A couple of hooks (`useLanguage.tsx`) have a `// eslint-disable-next-line
+  react-hooks/set-state-in-effect` on the localStorage read on mount — this is a
+  deliberate exception: reading `localStorage` must happen post-hydration to avoid a
+  server/client mismatch, which is exactly what that effect does.
 
 ## Deploying to Vercel
 
@@ -100,6 +104,5 @@ vercel        # preview deployment
 vercel --prod # production deployment
 ```
 
-Before your first production deploy, update `siteUrl` in `app/layout.tsx` to your real
-domain so Open Graph/Twitter card metadata resolves correctly.
-# self-portofolio
+Before your first production deploy, confirm `siteUrl` in `app/layout.tsx` matches your
+real domain so Open Graph/Twitter card metadata resolves correctly.
