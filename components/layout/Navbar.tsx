@@ -9,6 +9,7 @@ import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { cn } from "@/lib/utils";
 import type { NavLink } from "@/types";
 import { Button } from "@/components/ui/Button";
+import Image from "next/image";
 
 const navLinks: NavLink[] = [
   { href: "about", label: { id: "Tentang", en: "About" } },
@@ -25,7 +26,16 @@ export function Navbar() {
   const { resolvedTheme, setTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const activeSection = useScrollSpy(sectionIds);
+
+  useEffect(() => {
+    // The client's first render must match the server's (which never knows
+    // the resolved theme), or React throws a hydration mismatch. Only trust
+    // resolvedTheme after this post-hydration effect has run.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 8);
@@ -56,12 +66,18 @@ export function Navbar() {
         className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6"
         aria-label="Main navigation"
       >
-        <a
-          href="#hero"
-          className="font-display text-2xl font-bold uppercase tracking-wide text-accent"
-        >
-          RA
-        </a>
+        
+      <a href="#hero" className="flex items-center">
+        <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-accent flex-shrink-0">
+          <Image
+            src="/assets/fotosmuray1.png"
+            alt="Rafi Al Arifi"
+            fill
+            className="object-cover object-top"
+            priority
+          />
+        </div>
+      </a>
 
         <ul className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
@@ -97,7 +113,7 @@ export function Navbar() {
             aria-label="Toggle theme"
             className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-text-secondary transition-colors hover:border-accent hover:text-accent"
           >
-            {isDark ? (
+            {mounted && isDark ? (
               <Sun className="h-4 w-4" aria-hidden="true" />
             ) : (
               <Moon className="h-4 w-4" aria-hidden="true" />
@@ -179,7 +195,7 @@ export function Navbar() {
                     aria-label="Toggle theme"
                     className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-text-secondary hover:border-accent hover:text-accent"
                   >
-                    {isDark ? (
+                    {mounted && isDark ? (
                       <Sun className="h-4 w-4" aria-hidden="true" />
                     ) : (
                       <Moon className="h-4 w-4" aria-hidden="true" />

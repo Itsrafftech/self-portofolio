@@ -12,7 +12,7 @@ const totalTech = new Set(skillCategories.flatMap((category) => category.skills)
 const stats = [
   { value: projects.length, suffix: "+", labelKey: "about.statProjects" },
   { value: totalTech, suffix: "+", labelKey: "about.statTech" },
-  { value: 3, suffix: "+", labelKey: "about.statYears" },
+  { value: 1, suffix: "+", labelKey: "about.statYears" },
 ];
 
 function CountUpCard({

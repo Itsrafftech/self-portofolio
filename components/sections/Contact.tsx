@@ -14,7 +14,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 const socialLinks: SocialLink[] = [
   { label: "GitHub", href: "https://github.com/Itsrafftech", icon: "github" },
   { label: "LinkedIn", href: "https://linkedin.com/in/rafialarifi", icon: "linkedin" },
-  { label: "Email", href: "mailto:itsrafftech@gmail.com", icon: "mail" },
+  { label: "Email", href: "mailto:rafiialrifi@gmail.com", icon: "mail" },
 ];
 
 const socialIconMap = { github: Github, linkedin: Linkedin, mail: Mail } as const;

@@ -11,16 +11,22 @@ interface TimelineItemProps {
   index: number;
 }
 
+function getTypeLabel(type: TimelineEntry["type"], t: (key: string) => string): string {
+  switch (type) {
+    case "work":         return t("timeline.work");
+    case "education":    return t("timeline.education");
+    case "organization": return t("timeline.organization");
+    case "committee":    return t("timeline.committee");
+    default:             return type;
+  }
+}
+
 export function TimelineItem({ entry, index }: TimelineItemProps) {
   const { lang, t } = useLang();
   const isLeft = index % 2 === 0;
 
   return (
-    <div
-      className={cn(
-        "relative flex flex-col gap-4 pl-10 sm:grid sm:grid-cols-2 sm:gap-8 sm:pl-0",
-      )}
-    >
+    <div className="relative flex flex-col gap-4 pl-10 sm:grid sm:grid-cols-2 sm:gap-8 sm:pl-0">
       <span
         className="absolute left-[7px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-accent bg-bg-primary sm:left-1/2 sm:-translate-x-1/2"
         aria-hidden="true"
@@ -42,7 +48,7 @@ export function TimelineItem({ entry, index }: TimelineItemProps) {
             isLeft && "sm:flex-row-reverse",
           )}
         >
-          <Badge active>{entry.type === "work" ? t("timeline.work") : t("timeline.education")}</Badge>
+          <Badge active>{getTypeLabel(entry.type, t)}</Badge>
           <span className="text-xs font-semibold uppercase tracking-widest text-text-secondary">
             {entry.year}
           </span>

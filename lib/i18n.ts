@@ -26,13 +26,13 @@ export const translations = {
     about: {
       heading: "Tentang Saya",
       quote: "Ide sederhana. Eksekusi serius.",
-      bio: "Saya seorang mahasiswa Ilmu Komputer yang tertarik pada pengembangan web, manajemen proyek, dan membangun solusi digital yang berdampak. Saya senang mengubah ide menjadi produk nyata — mulai dari antarmuka yang rapi dan fungsional hingga eksekusi proyek yang terorganisir. Berbasis di Indonesia, saya selalu mencari cara untuk belajar, membangun, dan memimpin.",
+      bio: "Saya seorang mahasiswa Ilmu Komputer yang tertarik pada pengembangan web, manajemen proyek, dan membangun solusi digital yang berdampak. Saya senang mengubah ide menjadi produk nyata, mulai dari antarmuka yang rapi dan fungsional hingga eksekusi proyek yang terorganisir. Berbasis di Indonesia, saya selalu mencari cara untuk belajar, membangun, dan memimpin.",
       statProjects: "Proyek",
       statTech: "Teknologi",
       statYears: "Tahun Pengalaman",
     },
     skills: {
-      heading: "Arsenal",
+      heading: "Keahlian",
       subheading: "Peralatan yang saya gunakan untuk membangun, menganalisis, dan memimpin.",
       filterAll: "Semua",
       filterFrontend: "Frontend",
@@ -57,6 +57,8 @@ export const translations = {
       subheading: "Perjalanan profesional dan akademis saya sejauh ini.",
       work: "Kerja",
       education: "Pendidikan",
+      organization: "Organisasi",
+      committee: "Kepanitiaan",
     },
     contact: {
       heading: "Kontak",
@@ -109,13 +111,13 @@ export const translations = {
     about: {
       heading: "About Me",
       quote: "Simple ideas. Serious execution.",
-      bio: "I'm a Computer Science student passionate about web development, project management, and building impactful digital solutions. I enjoy turning ideas into working products — from clean, functional interfaces to well-organized project execution. Based in Indonesia, I'm always looking for ways to learn, build, and lead.",
+      bio: "I'm a Computer Science student passionate about web development, project management, and building impactful digital solutions. I enjoy turning ideas into working products, from clean, functional interfaces to well-organized project execution. Based in Indonesia, I'm always looking for ways to learn, build, and lead.",
       statProjects: "Projects",
       statTech: "Technologies",
       statYears: "Years of Experience",
     },
     skills: {
-      heading: "Arsenal",
+      heading: "Skills",
       subheading: "The tools I use to build, analyze, and lead.",
       filterAll: "All",
       filterFrontend: "Frontend",
@@ -140,6 +142,8 @@ export const translations = {
       subheading: "My professional and academic journey so far.",
       work: "Work",
       education: "Education",
+      organization: "Organization",
+      committee: "Committee",
     },
     contact: {
       heading: "Contact",

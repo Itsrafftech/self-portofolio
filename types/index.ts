@@ -27,7 +27,7 @@ export interface SkillCategory {
   skills: string[];
 }
 
-export type TimelineType = "work" | "education";
+export type TimelineType = "work" | "education" | "organization" | "committee";
 
 export interface TimelineEntry {
   id: string;

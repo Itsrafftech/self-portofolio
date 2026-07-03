@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     title: 'Rafi Al Arifi — Portfolio',
     description: 'Simple ideas. Serious execution.',
     siteName: 'Rafi Al Arifi Portfolio',
-    images: ['/assets/og-image.png'],
+    images: ['/assets/fotosmuray1.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Rafi Al Arifi — Portfolio',
     description: 'Simple ideas. Serious execution.',
-    images: ['/assets/og-image.png'],
+    images: ['/assets/fotosmuray1.png'],
   },
 };
 
