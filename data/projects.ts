@@ -10,8 +10,8 @@ export const projects: Project[] = [
     },
     techStack: ["React", "Node.js", "PostgreSQL", "Express", "Chart.js"],
     category: "fullstack",
-    githubUrl: "https://github.com/yourusername/fintrack",
-    liveUrl: "https://fintrack.example.com",
+    githubUrl: "https://github.com/Itsrafftech/fintrack-personal-finance.git",
+    liveUrl: "https://fintrack-personal-finance-lvbejs2cd-itsrafftechs-projects.vercel.app/",
     featured: true,
   },
   {
