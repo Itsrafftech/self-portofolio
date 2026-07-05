@@ -23,8 +23,8 @@ export const projects: Project[] = [
     },
     techStack: ["Python", "NLP", "Streamlit", "Pandas", "Hugging Face"],
     category: "data-science",
-    githubUrl: "https://github.com/yourusername/market-sentiment-analyzer",
-    liveUrl: "https://market-sentiment.example.com",
+    githubUrl: "https://github.com/Itsrafftech/market-sentiment.git",
+    liveUrl: "https://huggingface.co/spaces/itsrafftech/market-sentiment",
     featured: true,
   },
   {
