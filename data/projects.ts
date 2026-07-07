@@ -36,8 +36,8 @@ export const projects: Project[] = [
     },
     techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "tRPC"],
     category: "pm-tool",
-    githubUrl: "https://github.com/yourusername/agileboard",
-    liveUrl: "https://agileboard.example.com",
+    githubUrl: "https://github.com/Itsrafftech/agilrboard",
+    liveUrl: "https://agilrboard.vercel.app",
     featured: true,
   },
   {
