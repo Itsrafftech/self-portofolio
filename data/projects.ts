@@ -62,7 +62,8 @@ export const projects: Project[] = [
     },
     techStack: ["Scikit-learn", "FastAPI", "Docker", "Pandas"],
     category: "data-science",
-    githubUrl: "https://github.com/yourusername/loan-risk-predictor",
+    githubUrl: "https://github.com/itsrafftech/loan-risk",
+    liveUrl: "https://loan-risk-4cdpby7xuccqzjbmbuzxdn.streamlit.app/",
     featured: false,
   },
   {
