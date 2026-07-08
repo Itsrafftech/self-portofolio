@@ -5,7 +5,7 @@ export interface LocalizedText {
   en: string;
 }
 
-export type ProjectCategory = "fullstack" | "data-science" | "finance" | "pm-tool";
+export type ProjectCategory = "fullstack" | "data-science" | "finance" | "pm-tool" | "frontend";
 
 export interface Project {
   id: string;
