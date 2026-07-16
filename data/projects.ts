@@ -2,18 +2,19 @@ import type { Project } from "@/types";
 
 export const projects: Project[] = [
   {
-    id: "fintrack",
-    title: "FinTrack — Personal Finance Dashboard",
+    id: "kantongku",
+    title: "KantongKu — Aplikasi Akuntansi UMKM",
     description: {
-      id: "Dasbor keuangan pribadi untuk melacak pemasukan, pengeluaran, dan target tabungan dengan visualisasi interaktif.",
-      en: "A personal finance dashboard for tracking income, expenses, and savings goals with interactive visualizations.",
-    },
-    techStack: ["React", "Node.js", "PostgreSQL", "Express", "Chart.js"],
-    category: "fullstack",
-    githubUrl: "https://github.com/Itsrafftech/fintrack-personal-finance.git",
-    liveUrl: "https://fintrack-personal-finance-lvbejs2cd-itsrafftechs-projects.vercel.app/",
-    featured: false,
+    id: "Aplikasi akuntansi lengkap untuk UMKM Indonesia dengan laporan keuangan standar SAK EMKM, jurnal double-entry, dan mode input sederhana.",
+    en: "A complete accounting app for Indonesian SMEs with SAK EMKM standard financial reports, double-entry journal, and simplified input mode.",
   },
+    techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "tRPC"],
+    category: "fullstack",
+    githubUrl: "https://github.com/Itsrafftech/kantongku",
+    liveUrl: "https://kantongku-eight.vercel.app",
+    featured: true,
+  },
+
   {
     id: "market-sentiment-analyzer",
     title: "Market Sentiment Analyzer",
@@ -66,17 +67,18 @@ export const projects: Project[] = [
     liveUrl: "https://loan-risk-4cdpby7xuccqzjbmbuzxdn.streamlit.app/",
     featured: false,
   },
+
   {
-    id: "kantongku",
-    title: "KantongKu — Aplikasi Akuntansi UMKM",
+    id: "fintrack",
+    title: "FinTrack — Personal Finance Dashboard",
     description: {
-    id: "Aplikasi akuntansi lengkap untuk UMKM Indonesia dengan laporan keuangan standar SAK EMKM, jurnal double-entry, dan mode input sederhana.",
-    en: "A complete accounting app for Indonesian SMEs with SAK EMKM standard financial reports, double-entry journal, and simplified input mode.",
+      id: "Dasbor keuangan pribadi untuk melacak pemasukan, pengeluaran, dan target tabungan dengan visualisasi interaktif.",
+      en: "A personal finance dashboard for tracking income, expenses, and savings goals with interactive visualizations.",
   },
-    techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "tRPC"],
+    techStack: ["React", "Node.js", "PostgreSQL", "Express", "Chart.js"],
     category: "fullstack",
-    githubUrl: "https://github.com/Itsrafftech/kantongku",
-    liveUrl: "https://kantongku-eight.vercel.app",
-    featured: true,
+    githubUrl: "https://github.com/Itsrafftech/fintrack-personal-finance.git",
+    liveUrl: "https://fintrack-personal-finance-lvbejs2cd-itsrafftechs-projects.vercel.app/",
+    featured: false,
   },
 ];
