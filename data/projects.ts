@@ -12,7 +12,7 @@ export const projects: Project[] = [
     category: "fullstack",
     githubUrl: "https://github.com/Itsrafftech/fintrack-personal-finance.git",
     liveUrl: "https://fintrack-personal-finance-lvbejs2cd-itsrafftechs-projects.vercel.app/",
-    featured: true,
+    featured: false,
   },
   {
     id: "market-sentiment-analyzer",
@@ -77,6 +77,6 @@ export const projects: Project[] = [
     category: "fullstack",
     githubUrl: "https://github.com/Itsrafftech/kantongku",
     liveUrl: "https://kantongku-eight.vercel.app",
-    featured: false,
+    featured: true,
   },
 ];
