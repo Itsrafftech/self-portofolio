@@ -2,17 +2,36 @@ import type { Metadata } from 'next';
 import { Bebas_Neue, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { Providers } from '@/components/providers';
-import JsonLd from './components/JsonLd';
 
 const display = Bebas_Neue({ weight:'400', variable:'--font-display', subsets:['latin'], display:'swap' });
 const body = Plus_Jakarta_Sans({ variable:'--font-body', subsets:['latin'], display:'swap' });
 
-const siteUrl = 'https://rafialarifi.vercel.app';
+const siteUrl = 'https://rafialarifi-xi.vercel.app';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rafi Al Arifi",
+  "alternateName": "Muhammad Rafi Al Arifi",
+  "url": siteUrl,
+  "image": `${siteUrl}/assets/fotosmuray1.png`,
+  "jobTitle": "Web Developer & Computer Science Student",
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "IPB University"
+  },
+  "knowsAbout": ["Web Development", "Project Management", "Data Science", "Financial Analysis"],
+  "sameAs": [
+    "https://github.com/Itsrafftech",
+    "https://linkedin.com/in/rafialarifi"
+  ],
+  "email": "rafiialrifi@gmail.com",
+  "description": "Mahasiswa Ilmu Komputer IPB University yang passionate di web development, project management, dan solusi digital."
+};
 
 export const metadata: Metadata = {
   title: { default: 'Rafi Al Arifi — Portfolio', template: '%s | Rafi Al Arifi' },
-  description:
-    'Computer Science student passionate about web development, project management, and building impactful digital solutions.',
+  description: 'Computer Science student passionate about web development, project management, and building impactful digital solutions.',
   metadataBase: new URL(siteUrl),
   keywords: ['Rafi Al Arifi', 'Web Developer', 'Computer Science', 'Project Management', 'Portfolio'],
   authors: [{ name: 'Rafi Al Arifi' }],
@@ -38,8 +57,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="id" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body style={{ minHeight:'100vh', display:'flex', flexDirection:'column' }}>
-        <JsonLd />
         <Providers>{children}</Providers>
       </body>
     </html>
