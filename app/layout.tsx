@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import { Bebas_Neue, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { Providers } from '@/components/providers';
+import JsonLd from './components/JsonLd';
 
 const display = Bebas_Neue({ weight:'400', variable:'--font-display', subsets:['latin'], display:'swap' });
 const body = Plus_Jakarta_Sans({ variable:'--font-body', subsets:['latin'], display:'swap' });
 
-const siteUrl = 'https://rafialarifi.vercel.app'; // ganti setelah deploy
+const siteUrl = 'https://rafialarifi.vercel.app';
 
 export const metadata: Metadata = {
   title: { default: 'Rafi Al Arifi — Portfolio', template: '%s | Rafi Al Arifi' },
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     images: ['/assets/fotosmuray1.png'],
   },
   verification: {
-    google: "R6RbNJ1nq2j2q6U3ELsk7Gry4Fgd5yDf5jZrMvLaPOE",
+    google: 'R6RbNJ1nq2j2q6U3ELsk7Gry4Fgd5yDf5jZrMvLaPOE',
   },
 };
 
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="id" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
       <body style={{ minHeight:'100vh', display:'flex', flexDirection:'column' }}>
+        <JsonLd />
         <Providers>{children}</Providers>
       </body>
     </html>
