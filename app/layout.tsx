@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     description: 'Simple ideas. Serious execution.',
     images: ['/assets/fotosmuray1.png'],
   },
+  verification: {
+    google: "R6RbNJ1nq2j2q6U3ELsk7Gry4Fgd5yDf5jZrMvLaPOE",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
